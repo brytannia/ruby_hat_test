@@ -1,0 +1,13 @@
+<table align="center">
+  <tr>
+    <td align="center" colspan="2">
+      <%= @question.topic_url %>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <%= link_to @question.answer(@answ1), quiz_answers_path(quiz: @quiz, answer: @answ1), method: :post %></td>
+    <td>
+      <%= link_to @question.answer(@answ2), quiz_answers_path(quiz: @quiz, answer: @answ2), method: :post %></td>
+  </tr>
+</table>
