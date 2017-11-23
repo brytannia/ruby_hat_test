@@ -26,7 +26,6 @@ class QuizzOperator
   end
 
   def verdict
-    finished? ? @quiz.answers[5].responce : nil
+    finished? ? @quiz.answers[5].responce_code : nil
   end
-
 end

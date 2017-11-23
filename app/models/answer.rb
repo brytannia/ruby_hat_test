@@ -25,4 +25,17 @@ class Answer < ApplicationRecord
   def looser
     responce == candidate_1 ? candidate_2 : candidate_1
   end
+
+  def responce_code
+    case responce
+      when 0
+        :green
+      when 1
+        :yellow
+      when 2
+        :blue
+      when 3
+        :red
+    end
+  end
 end

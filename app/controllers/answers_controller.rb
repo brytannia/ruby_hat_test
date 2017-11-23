@@ -3,6 +3,7 @@ class AnswersController < ApplicationController
     @quiz = Quiz.find(params[:quiz_id])
     operator = QuizzOperator.new(@quiz)
     if operator.finished?
+      MicroCommute.publish(operator.verdict)
       redirect_to quiz_path(@quiz)
     else
       answer = @quiz.answers.where(responce: nil).first
